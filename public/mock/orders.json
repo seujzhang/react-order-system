@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "shop": "肯德基",
+    "picture": "",
+    "product": "原味鸡",
+    "price": 9.9,
+    "ifCommented": true
+  },
+  {
+    "id": 2,
+    "shop": "麦当劳",
+    "picture": "",
+    "product": "薯条",
+    "price": 13,
+    "ifCommented": false
+  },
+  {
+    "id": 3,
+    "shop": "老乡鸡",
+    "picture": "",
+    "product": "老母鸡汤",
+    "price": 8,
+    "ifCommented": true
+  },
+  {
+    "id": 4,
+    "shop": "老娘舅",
+    "picture": "",
+    "product": "板栗焖鸡",
+    "price": 32,
+    "ifCommented": true
+  }
+]
