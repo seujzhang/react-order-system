@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from 'antd';
 import "./style.css";
 
 class OrderItem extends Component {
@@ -16,7 +17,7 @@ class OrderItem extends Component {
     return (
       <div className="orderItem">
         <div className="orderItem__picContainer">
-          <img className="orderItem__pic" src={picture} />
+          <img className="orderItem__pic" src={picture} alt="orderItemPicture"/>
         </div>
         <div className="orderItem__content">
           <div className="orderItem__product">{product}</div>
@@ -25,22 +26,21 @@ class OrderItem extends Component {
             <div className="orderItem__price">{price}</div>
             <div>
               {ifCommented ? (
-                <button className="orderItem__btn orderItem__btn--grey">
+                <Button type="primary" className="orderItem__btn orderItem__btn--grey">
                   已评价
-                </button>
+                </Button>
               ) : (
-                <button
+                <Button type="primary"
                   className="orderItem__btn orderItem__red"
                   onClick={this.handleOpenEditArea}
                 >
                   评价
-                </button>
+                </Button>
               )}
             </div>
           </div>
-        </div>
-        {this.state.editing ? this.renderEditArea() : null}
-        <div />
+        </div>      
+        {this.state.editing ? this.renderEditArea() : null}       
       </div>
     );
   }
@@ -54,18 +54,18 @@ class OrderItem extends Component {
           className="orderItem__comment"
         />
         {this.renderStarts()}
-        <button
+        <Button type="primary"
           className="orderItem__btn orderItem__red"
           onClick={this.handleSubmitComment}
         >
           提交
-        </button>
-        <button
+        </Button>
+        <Button type="primary"
           className="orderItem__btn orderItem__grey"
           onClick={this.handleCancelComment}
         >
           取消
-        </button>
+        </Button>
       </div>
     );
   }
@@ -75,10 +75,10 @@ class OrderItem extends Component {
     return (
       <div>
         {[1, 2, 3, 4, 5].map((item, index) => {
-          const lightClass = starts >= item ? "orderItem__start--light" : "";
+          const lightClass = starts >= item ? "orderItem__star--light" : "";
           return (
             <span
-              className={"orderItem__start" + lightClass}
+              className={"orderItem__start " + lightClass}
               key={index}
               onClick={this.handleClickStarts.bind(this, item)}
             >
